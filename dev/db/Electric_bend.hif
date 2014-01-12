@@ -1,0 +1,170 @@
+Quartus II 64-Bit
+Version 9.1 Build 222 10/21/2009 SJ Full Version
+45
+3268
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+MOTOR_CONTROL
+# storage
+db|Electric_bend.(1).cnf
+db|Electric_bend.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|wd|verilog|electric_bend|src|motor_control.v
+22b44459b360ea7418131f46a8cbe6e8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MOTOR_CONTROL:M1C
+MOTOR_CONTROL:M2C
+}
+# macro_sequence
+
+# end
+# entity
+PWM
+# storage
+db|Electric_bend.(2).cnf
+db|Electric_bend.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|wd|verilog|electric_bend|src|pwm.v
+47341f345ff91be79209b676b4bae73
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MOTOR_CONTROL:M1C|PWM:motor_vref
+MOTOR_CONTROL:M2C|PWM:motor_vref
+}
+# macro_sequence
+
+# end
+# entity
+Electric_bend
+# storage
+db|Electric_bend.(0).cnf
+db|Electric_bend.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|wd|verilog|electric_bend|src|electric_bend.v
+db68599749376b744123fbbae68e4b31
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+MOTOR_FEEDBACK
+# storage
+db|Electric_bend.(3).cnf
+db|Electric_bend.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|wd|verilog|electric_bend|src|motor_feedback.v
+e450d6063dee5f0892dcab62a6d933a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MOTOR_FEEDBACK:M1F
+MOTOR_FEEDBACK:M2F
+}
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,866 @@
+Classic Timing Analyzer report for Electric_bend
+Mon Dec 23 16:33:36 2013
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLK'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+------------+-------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From       ; To                                        ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------+-------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 17.497 ns                        ; FSMC_A[2]  ; port_reg[5]                               ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.026 ns                        ; data[0][4] ; led1                                      ; CLK        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.185 ns                        ; FSMC_D[0]  ; data[18][0]                               ; --         ; CLK      ; 0            ;
+; Clock Setup: 'CLK'           ; N/A   ; None          ; 41.90 MHz ( period = 23.866 ns ) ; data[3][5] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;            ;                                           ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------+-------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM1270T144C5      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                    ; To                                        ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 41.90 MHz ( period = 23.866 ns )                    ; data[3][5]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.224 ns               ;
+; N/A                                     ; 42.30 MHz ( period = 23.642 ns )                    ; data[3][5]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.112 ns               ;
+; N/A                                     ; 43.94 MHz ( period = 22.760 ns )                    ; data[4][5]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.671 ns               ;
+; N/A                                     ; 44.11 MHz ( period = 22.672 ns )                    ; data[7][4]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.627 ns               ;
+; N/A                                     ; 44.60 MHz ( period = 22.420 ns )                    ; data[4][2]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.501 ns               ;
+; N/A                                     ; 45.11 MHz ( period = 22.170 ns )                    ; data[8][2]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.376 ns               ;
+; N/A                                     ; 45.16 MHz ( period = 22.144 ns )                    ; data[3][3]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.363 ns               ;
+; N/A                                     ; 45.34 MHz ( period = 22.056 ns )                    ; data[4][5]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.319 ns               ;
+; N/A                                     ; 45.72 MHz ( period = 21.874 ns )                    ; data[3][3]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.228 ns               ;
+; N/A                                     ; 45.93 MHz ( period = 21.770 ns )                    ; data[7][2]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.176 ns               ;
+; N/A                                     ; 46.02 MHz ( period = 21.732 ns )                    ; data[7][6]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.157 ns               ;
+; N/A                                     ; 46.05 MHz ( period = 21.716 ns )                    ; data[4][2]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.149 ns               ;
+; N/A                                     ; 46.42 MHz ( period = 21.542 ns )                    ; data[7][6]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.062 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.502 ns )                    ; data[8][0]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.042 ns               ;
+; N/A                                     ; 46.84 MHz ( period = 21.350 ns )                    ; data[7][7]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.966 ns                ;
+; N/A                                     ; 46.94 MHz ( period = 21.302 ns )                    ; data[3][1]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.942 ns                ;
+; N/A                                     ; 46.97 MHz ( period = 21.292 ns )                    ; data[7][4]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.937 ns                ;
+; N/A                                     ; 47.09 MHz ( period = 21.238 ns )                    ; data[3][6]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.910 ns                ;
+; N/A                                     ; 47.09 MHz ( period = 21.234 ns )                    ; data[3][6]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.908 ns                ;
+; N/A                                     ; 47.55 MHz ( period = 21.032 ns )                    ; data[3][1]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.807 ns                ;
+; N/A                                     ; 47.72 MHz ( period = 20.956 ns )                    ; data[7][0]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.769 ns                ;
+; N/A                                     ; 47.77 MHz ( period = 20.934 ns )                    ; data[8][3]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.758 ns                ;
+; N/A                                     ; 47.78 MHz ( period = 20.930 ns )                    ; data[7][3]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.756 ns                ;
+; N/A                                     ; 47.82 MHz ( period = 20.912 ns )                    ; data[8][2]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.747 ns                ;
+; N/A                                     ; 48.22 MHz ( period = 20.738 ns )                    ; data[4][6]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.660 ns                ;
+; N/A                                     ; 48.33 MHz ( period = 20.692 ns )                    ; data[4][1]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.637 ns                ;
+; N/A                                     ; 48.66 MHz ( period = 20.552 ns )                    ; data[8][0]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.567 ns                ;
+; N/A                                     ; 48.66 MHz ( period = 20.550 ns )                    ; data[8][3]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.566 ns                ;
+; N/A                                     ; 49.13 MHz ( period = 20.354 ns )                    ; data[3][4]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.468 ns                ;
+; N/A                                     ; 49.15 MHz ( period = 20.346 ns )                    ; data[4][6]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.464 ns                ;
+; N/A                                     ; 49.41 MHz ( period = 20.240 ns )                    ; data[4][0]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.411 ns                ;
+; N/A                                     ; 49.44 MHz ( period = 20.228 ns )                    ; data[3][7]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.405 ns                ;
+; N/A                                     ; 49.58 MHz ( period = 20.168 ns )                    ; data[3][0]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.375 ns                ;
+; N/A                                     ; 49.92 MHz ( period = 20.034 ns )                    ; data[3][2]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.308 ns                ;
+; N/A                                     ; 49.99 MHz ( period = 20.004 ns )                    ; data[3][2]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.293 ns                ;
+; N/A                                     ; 50.19 MHz ( period = 19.924 ns )                    ; data[4][4]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.253 ns                ;
+; N/A                                     ; 50.23 MHz ( period = 19.908 ns )                    ; data[4][3]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.245 ns                ;
+; N/A                                     ; 50.40 MHz ( period = 19.842 ns )                    ; data[3][4]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 50.50 MHz ( period = 19.802 ns )                    ; data[4][1]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.192 ns                ;
+; N/A                                     ; 50.62 MHz ( period = 19.754 ns )                    ; data[4][4]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.168 ns                ;
+; N/A                                     ; 50.63 MHz ( period = 19.750 ns )                    ; data[7][1]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.166 ns                ;
+; N/A                                     ; 51.71 MHz ( period = 19.338 ns )                    ; data[8][6]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.960 ns                ;
+; N/A                                     ; 51.86 MHz ( period = 19.284 ns )                    ; data[8][6]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.933 ns                ;
+; N/A                                     ; 52.29 MHz ( period = 19.124 ns )                    ; data[7][5]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.853 ns                ;
+; N/A                                     ; 52.39 MHz ( period = 19.088 ns )                    ; data[7][7]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.835 ns                ;
+; N/A                                     ; 52.65 MHz ( period = 18.994 ns )                    ; data[3][7]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.788 ns                ;
+; N/A                                     ; 52.91 MHz ( period = 18.900 ns )                    ; data[3][0]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.741 ns                ;
+; N/A                                     ; 52.94 MHz ( period = 18.890 ns )                    ; data[7][5]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.736 ns                ;
+; N/A                                     ; 52.97 MHz ( period = 18.878 ns )                    ; data[8][1]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.730 ns                ;
+; N/A                                     ; 53.62 MHz ( period = 18.650 ns )                    ; data[8][1]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.616 ns                ;
+; N/A                                     ; 54.96 MHz ( period = 18.194 ns )                    ; data[8][5]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.388 ns                ;
+; N/A                                     ; 55.07 MHz ( period = 18.160 ns )                    ; data[4][0]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.371 ns                ;
+; N/A                                     ; 55.15 MHz ( period = 18.134 ns )                    ; data[7][2]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.358 ns                ;
+; N/A                                     ; 55.25 MHz ( period = 18.098 ns )                    ; data[8][4]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.340 ns                ;
+; N/A                                     ; 55.35 MHz ( period = 18.066 ns )                    ; data[8][5]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.324 ns                ;
+; N/A                                     ; 55.44 MHz ( period = 18.036 ns )                    ; data[8][4]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 8.309 ns                ;
+; N/A                                     ; 55.72 MHz ( period = 17.946 ns )                    ; data[7][0]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.264 ns                ;
+; N/A                                     ; 56.66 MHz ( period = 17.648 ns )                    ; data[4][3]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 8.115 ns                ;
+; N/A                                     ; 57.80 MHz ( period = 17.302 ns )                    ; data[7][3]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 7.942 ns                ;
+; N/A                                     ; 58.58 MHz ( period = 17.070 ns )                    ; data[8][7]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 7.826 ns                ;
+; N/A                                     ; 58.86 MHz ( period = 16.990 ns )                    ; data[7][1]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 7.786 ns                ;
+; N/A                                     ; 59.30 MHz ( period = 16.864 ns )                    ; data[4][7]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 7.723 ns                ;
+; N/A                                     ; 59.51 MHz ( period = 16.804 ns )                    ; data[8][7]                              ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 7.693 ns                ;
+; N/A                                     ; 60.26 MHz ( period = 16.594 ns )                    ; data[4][7]                              ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 7.588 ns                ;
+; N/A                                     ; 61.43 MHz ( period = 16.278 ns )                    ; MOTOR_FEEDBACK:M2F|dir_fwd_rev          ; port_reg[7]                               ; CLK        ; CLK      ; None                        ; None                      ; 7.430 ns                ;
+; N/A                                     ; 62.95 MHz ( period = 15.886 ns )                    ; MOTOR_FEEDBACK:M1F|dir_fwd_rev          ; port_reg[7]                               ; CLK        ; CLK      ; None                        ; None                      ; 7.234 ns                ;
+; N/A                                     ; 66.51 MHz ( period = 15.036 ns )                    ; MOTOR_FEEDBACK:M2F|LI_SYNC2             ; port_reg[6]                               ; CLK        ; CLK      ; None                        ; None                      ; 6.809 ns                ;
+; N/A                                     ; 75.76 MHz ( period = 13.199 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 12.490 ns               ;
+; N/A                                     ; 76.55 MHz ( period = 13.064 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 12.355 ns               ;
+; N/A                                     ; 76.91 MHz ( period = 13.003 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 12.294 ns               ;
+; N/A                                     ; 77.54 MHz ( period = 12.896 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 12.187 ns               ;
+; N/A                                     ; 77.71 MHz ( period = 12.868 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 12.159 ns               ;
+; N/A                                     ; 79.83 MHz ( period = 12.526 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[1]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.817 ns               ;
+; N/A                                     ; 79.92 MHz ( period = 12.512 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.803 ns               ;
+; N/A                                     ; 79.95 MHz ( period = 12.508 ns )                    ; data[7][3]                              ; port_reg[3]                               ; CLK        ; CLK      ; None                        ; None                      ; 11.799 ns               ;
+; N/A                                     ; 80.70 MHz ( period = 12.391 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[1]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.682 ns               ;
+; N/A                                     ; 80.78 MHz ( period = 12.380 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.671 ns               ;
+; N/A                                     ; 80.80 MHz ( period = 12.377 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.668 ns               ;
+; N/A                                     ; 81.01 MHz ( period = 12.344 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.635 ns               ;
+; N/A                                     ; 81.61 MHz ( period = 12.254 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.545 ns               ;
+; N/A                                     ; 81.67 MHz ( period = 12.245 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.536 ns               ;
+; N/A                                     ; 81.80 MHz ( period = 12.225 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.516 ns               ;
+; N/A                                     ; 81.96 MHz ( period = 12.201 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.492 ns               ;
+; N/A                                     ; 82.37 MHz ( period = 12.140 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.431 ns               ;
+; N/A                                     ; 82.44 MHz ( period = 12.130 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.421 ns               ;
+; N/A                                     ; 82.52 MHz ( period = 12.119 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.410 ns               ;
+; N/A                                     ; 82.65 MHz ( period = 12.099 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 11.390 ns               ;
+; N/A                                     ; 82.88 MHz ( period = 12.066 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.357 ns               ;
+; N/A                                     ; 83.26 MHz ( period = 12.011 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.302 ns               ;
+; N/A                                     ; 83.66 MHz ( period = 11.953 ns )                    ; data[2][4]                              ; port_reg[4]                               ; CLK        ; CLK      ; None                        ; None                      ; 11.244 ns               ;
+; N/A                                     ; 83.77 MHz ( period = 11.938 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 11.229 ns               ;
+; N/A                                     ; 84.22 MHz ( period = 11.873 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[1]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 11.164 ns               ;
+; N/A                                     ; 84.82 MHz ( period = 11.790 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 11.081 ns               ;
+; N/A                                     ; 85.48 MHz ( period = 11.698 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.989 ns               ;
+; N/A                                     ; 85.51 MHz ( period = 11.695 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.986 ns               ;
+; N/A                                     ; 85.88 MHz ( period = 11.644 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[1]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.935 ns               ;
+; N/A                                     ; 85.91 MHz ( period = 11.640 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.931 ns               ;
+; N/A                                     ; 85.94 MHz ( period = 11.636 ns )                    ; data[6][5]                              ; port_reg[5]                               ; CLK        ; CLK      ; None                        ; None                      ; 10.927 ns               ;
+; N/A                                     ; 86.40 MHz ( period = 11.574 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.865 ns               ;
+; N/A                                     ; 86.48 MHz ( period = 11.563 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.854 ns               ;
+; N/A                                     ; 86.50 MHz ( period = 11.561 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.852 ns               ;
+; N/A                                     ; 86.60 MHz ( period = 11.547 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.838 ns               ;
+; N/A                                     ; 86.91 MHz ( period = 11.506 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 10.797 ns               ;
+; N/A                                     ; 87.06 MHz ( period = 11.486 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.777 ns               ;
+; N/A                                     ; 87.16 MHz ( period = 11.473 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.764 ns               ;
+; N/A                                     ; 87.31 MHz ( period = 11.453 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.744 ns               ;
+; N/A                                     ; 87.59 MHz ( period = 11.417 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.708 ns               ;
+; N/A                                     ; 87.68 MHz ( period = 11.405 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.696 ns               ;
+; N/A                                     ; 87.81 MHz ( period = 11.388 ns )                    ; MOTOR_FEEDBACK:M1F|dir_fwd_rev          ; data[16][7]                               ; CLK        ; CLK      ; None                        ; None                      ; 4.985 ns                ;
+; N/A                                     ; 87.88 MHz ( period = 11.379 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.670 ns               ;
+; N/A                                     ; 87.91 MHz ( period = 11.375 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.666 ns               ;
+; N/A                                     ; 88.08 MHz ( period = 11.353 ns )                    ; data[3][6]                              ; port_reg[6]                               ; CLK        ; CLK      ; None                        ; None                      ; 10.644 ns               ;
+; N/A                                     ; 88.16 MHz ( period = 11.343 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.634 ns               ;
+; N/A                                     ; 88.20 MHz ( period = 11.338 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.629 ns               ;
+; N/A                                     ; 88.27 MHz ( period = 11.329 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.620 ns               ;
+; N/A                                     ; 88.32 MHz ( period = 11.322 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.613 ns               ;
+; N/A                                     ; 88.34 MHz ( period = 11.320 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.611 ns               ;
+; N/A                                     ; 88.67 MHz ( period = 11.278 ns )                    ; MOTOR_FEEDBACK:M1F|LI_SYNC2             ; port_reg[6]                               ; CLK        ; CLK      ; None                        ; None                      ; 4.930 ns                ;
+; N/A                                     ; 88.73 MHz ( period = 11.270 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.561 ns               ;
+; N/A                                     ; 89.33 MHz ( period = 11.195 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.486 ns               ;
+; N/A                                     ; 89.41 MHz ( period = 11.185 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.476 ns               ;
+; N/A                                     ; 89.65 MHz ( period = 11.154 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.445 ns               ;
+; N/A                                     ; 89.69 MHz ( period = 11.149 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.440 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.103 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 10.394 ns               ;
+; N/A                                     ; 90.73 MHz ( period = 11.022 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.313 ns               ;
+; N/A                                     ; 90.76 MHz ( period = 11.018 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.309 ns               ;
+; N/A                                     ; 91.02 MHz ( period = 10.986 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.277 ns               ;
+; N/A                                     ; 91.19 MHz ( period = 10.966 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.257 ns               ;
+; N/A                                     ; 91.63 MHz ( period = 10.913 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 10.204 ns               ;
+; N/A                                     ; 91.85 MHz ( period = 10.887 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.178 ns               ;
+; N/A                                     ; 92.16 MHz ( period = 10.851 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 10.142 ns               ;
+; N/A                                     ; 92.19 MHz ( period = 10.847 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 10.138 ns               ;
+; N/A                                     ; 92.78 MHz ( period = 10.778 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]    ; CLK        ; CLK      ; None                        ; None                      ; 10.069 ns               ;
+; N/A                                     ; 92.81 MHz ( period = 10.775 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]    ; CLK        ; CLK      ; None                        ; None                      ; 10.066 ns               ;
+; N/A                                     ; 92.89 MHz ( period = 10.766 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 10.057 ns               ;
+; N/A                                     ; 92.95 MHz ( period = 10.759 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 10.050 ns               ;
+; N/A                                     ; 93.19 MHz ( period = 10.731 ns )                    ; data[10][4]                             ; port_reg[4]                               ; CLK        ; CLK      ; None                        ; None                      ; 10.022 ns               ;
+; N/A                                     ; 93.26 MHz ( period = 10.723 ns )                    ; data[3][0]                              ; port_reg[0]                               ; CLK        ; CLK      ; None                        ; None                      ; 10.014 ns               ;
+; N/A                                     ; 93.47 MHz ( period = 10.699 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.990 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.698 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.989 ns                ;
+; N/A                                     ; 93.55 MHz ( period = 10.689 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.980 ns                ;
+; N/A                                     ; 93.57 MHz ( period = 10.687 ns )                    ; data[3][5]                              ; port_reg[5]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.978 ns                ;
+; N/A                                     ; 93.79 MHz ( period = 10.662 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.953 ns                ;
+; N/A                                     ; 93.84 MHz ( period = 10.656 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.947 ns                ;
+; N/A                                     ; 94.14 MHz ( period = 10.622 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.913 ns                ;
+; N/A                                     ; 94.19 MHz ( period = 10.617 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]    ; CLK        ; CLK      ; None                        ; None                      ; 9.908 ns                ;
+; N/A                                     ; 94.22 MHz ( period = 10.614 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]    ; CLK        ; CLK      ; None                        ; None                      ; 9.905 ns                ;
+; N/A                                     ; 94.23 MHz ( period = 10.612 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.903 ns                ;
+; N/A                                     ; 94.30 MHz ( period = 10.604 ns )                    ; data[3][2]                              ; port_reg[2]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.895 ns                ;
+; N/A                                     ; 94.34 MHz ( period = 10.600 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.891 ns                ;
+; N/A                                     ; 94.37 MHz ( period = 10.597 ns )                    ; data[6][7]                              ; port_reg[7]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.888 ns                ;
+; N/A                                     ; 94.55 MHz ( period = 10.576 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.867 ns                ;
+; N/A                                     ; 94.88 MHz ( period = 10.540 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.831 ns                ;
+; N/A                                     ; 94.91 MHz ( period = 10.536 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]    ; CLK        ; CLK      ; None                        ; None                      ; 9.827 ns                ;
+; N/A                                     ; 94.92 MHz ( period = 10.535 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]    ; CLK        ; CLK      ; None                        ; None                      ; 9.826 ns                ;
+; N/A                                     ; 95.56 MHz ( period = 10.465 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.756 ns                ;
+; N/A                                     ; 95.73 MHz ( period = 10.446 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.737 ns                ;
+; N/A                                     ; 95.90 MHz ( period = 10.428 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.719 ns                ;
+; N/A                                     ; 95.92 MHz ( period = 10.425 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]    ; CLK        ; CLK      ; None                        ; None                      ; 9.716 ns                ;
+; N/A                                     ; 95.95 MHz ( period = 10.422 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.713 ns                ;
+; N/A                                     ; 95.99 MHz ( period = 10.418 ns )                    ; data[7][1]                              ; port_reg[1]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.709 ns                ;
+; N/A                                     ; 96.57 MHz ( period = 10.355 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.646 ns                ;
+; N/A                                     ; 96.66 MHz ( period = 10.346 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.637 ns                ;
+; N/A                                     ; 96.66 MHz ( period = 10.346 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.637 ns                ;
+; N/A                                     ; 96.70 MHz ( period = 10.341 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[18] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.632 ns                ;
+; N/A                                     ; 96.77 MHz ( period = 10.334 ns )                    ; data[9][0]                              ; port_reg[0]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.625 ns                ;
+; N/A                                     ; 97.04 MHz ( period = 10.305 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[18] ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.596 ns                ;
+; N/A                                     ; 97.50 MHz ( period = 10.256 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.547 ns                ;
+; N/A                                     ; 97.61 MHz ( period = 10.245 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]    ; CLK        ; CLK      ; None                        ; None                      ; 9.536 ns                ;
+; N/A                                     ; 97.62 MHz ( period = 10.244 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14]   ; CLK        ; CLK      ; None                        ; None                      ; 9.535 ns                ;
+; N/A                                     ; 97.68 MHz ( period = 10.238 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.529 ns                ;
+; N/A                                     ; 97.69 MHz ( period = 10.236 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]    ; CLK        ; CLK      ; None                        ; None                      ; 9.527 ns                ;
+; N/A                                     ; 97.89 MHz ( period = 10.216 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.507 ns                ;
+; N/A                                     ; 98.18 MHz ( period = 10.185 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]    ; CLK        ; CLK      ; None                        ; None                      ; 9.476 ns                ;
+; N/A                                     ; 98.21 MHz ( period = 10.182 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]    ; CLK        ; CLK      ; None                        ; None                      ; 9.473 ns                ;
+; N/A                                     ; 98.46 MHz ( period = 10.156 ns )                    ; data[11][4]                             ; port_reg[4]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.447 ns                ;
+; N/A                                     ; 98.46 MHz ( period = 10.156 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.447 ns                ;
+; N/A                                     ; 98.49 MHz ( period = 10.153 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.444 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; data[5][0]                              ; port_reg[0]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.60 MHz ( period = 10.142 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.433 ns                ;
+; N/A                                     ; 98.61 MHz ( period = 10.141 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14] ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM      ; CLK        ; CLK      ; None                        ; None                      ; 9.432 ns                ;
+; N/A                                     ; 98.85 MHz ( period = 10.116 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[18] ; MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.407 ns                ;
+; N/A                                     ; 99.27 MHz ( period = 10.074 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.365 ns                ;
+; N/A                                     ; 99.52 MHz ( period = 10.048 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|pwm_temp ; CLK        ; CLK      ; None                        ; None                      ; 9.339 ns                ;
+; N/A                                     ; 99.56 MHz ( period = 10.044 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]    ; CLK        ; CLK      ; None                        ; None                      ; 9.335 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]    ; CLK        ; CLK      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.60 MHz ( period = 10.040 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.331 ns                ;
+; N/A                                     ; 99.78 MHz ( period = 10.022 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.313 ns                ;
+; N/A                                     ; 99.79 MHz ( period = 10.021 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14]   ; CLK        ; CLK      ; None                        ; None                      ; 9.312 ns                ;
+; N/A                                     ; 99.92 MHz ( period = 10.008 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14]   ; CLK        ; CLK      ; None                        ; None                      ; 9.299 ns                ;
+; N/A                                     ; 99.97 MHz ( period = 10.003 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14]   ; CLK        ; CLK      ; None                        ; None                      ; 9.294 ns                ;
+; N/A                                     ; 100.07 MHz ( period = 9.993 ns )                    ; data[1][0]                              ; port_reg[0]                               ; CLK        ; CLK      ; None                        ; None                      ; 9.284 ns                ;
+; N/A                                     ; 100.11 MHz ( period = 9.989 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.280 ns                ;
+; N/A                                     ; 100.13 MHz ( period = 9.987 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.278 ns                ;
+; N/A                                     ; 100.26 MHz ( period = 9.974 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[25]   ; CLK        ; CLK      ; None                        ; None                      ; 9.265 ns                ;
+; N/A                                     ; 100.37 MHz ( period = 9.963 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22]   ; CLK        ; CLK      ; None                        ; None                      ; 9.254 ns                ;
+; N/A                                     ; 100.40 MHz ( period = 9.960 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.251 ns                ;
+; N/A                                     ; 100.47 MHz ( period = 9.953 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26]   ; CLK        ; CLK      ; None                        ; None                      ; 9.244 ns                ;
+; N/A                                     ; 100.60 MHz ( period = 9.940 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13]   ; CLK        ; CLK      ; None                        ; None                      ; 9.231 ns                ;
+; N/A                                     ; 100.67 MHz ( period = 9.933 ns )                    ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ; MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]    ; CLK        ; CLK      ; None                        ; None                      ; 9.224 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                         ;                                           ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                             ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+-------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From      ; To          ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+-------------+----------+
+; N/A                                     ; None                                                ; 17.497 ns  ; FSMC_A[2] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 17.416 ns  ; FSMC_A[3] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 17.325 ns  ; FSMC_A[4] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 17.129 ns  ; FSMC_A[0] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 16.998 ns  ; FSMC_A[2] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 16.950 ns  ; FSMC_A[1] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 16.917 ns  ; FSMC_A[3] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 16.826 ns  ; FSMC_A[4] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 16.630 ns  ; FSMC_A[0] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 16.518 ns  ; FSMC_A[0] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 16.451 ns  ; FSMC_A[1] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 16.381 ns  ; FSMC_A[2] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 16.333 ns  ; FSMC_NWE  ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 16.324 ns  ; FSMC_A[3] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 16.209 ns  ; FSMC_A[4] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 16.201 ns  ; FSMC_A[1] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 16.174 ns  ; FSMC_A[2] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 16.093 ns  ; FSMC_A[3] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 16.002 ns  ; FSMC_A[4] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 15.996 ns  ; FSMC_A[2] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 15.992 ns  ; FSMC_A[2] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 15.834 ns  ; FSMC_NWE  ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 15.824 ns  ; FSMC_A[4] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 15.820 ns  ; FSMC_A[4] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 15.806 ns  ; FSMC_A[0] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 15.719 ns  ; FSMC_A[3] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 15.715 ns  ; FSMC_A[3] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 15.627 ns  ; FSMC_A[1] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 15.313 ns  ; FSMC_A[0] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 15.296 ns  ; FSMC_A[0] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 15.273 ns  ; FSMC_A[2] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 15.236 ns  ; FSMC_A[3] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 15.217 ns  ; FSMC_NWE  ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 15.197 ns  ; FSMC_A[2] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 15.157 ns  ; FSMC_A[0] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 15.117 ns  ; FSMC_A[1] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 15.101 ns  ; FSMC_A[4] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 15.010 ns  ; FSMC_NWE  ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 14.996 ns  ; FSMC_A[1] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 14.996 ns  ; FSMC_A[3] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 14.978 ns  ; FSMC_A[1] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 14.770 ns  ; FSMC_A[0] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 14.733 ns  ; FSMC_A[4] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 14.500 ns  ; FSMC_NWE  ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 14.453 ns  ; FSMC_A[1] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 14.361 ns  ; FSMC_NWE  ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 14.093 ns  ; FSMC_D[4] ; port_reg[4] ; CLK      ;
+; N/A                                     ; None                                                ; 13.741 ns  ; FSMC_NWE  ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 13.537 ns  ; FSMC_NWE  ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 13.086 ns  ; FSMC_D[5] ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 12.559 ns  ; FSMC_D[0] ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 12.277 ns  ; M2_H1     ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 12.267 ns  ; M1_H1     ; port_reg[0] ; CLK      ;
+; N/A                                     ; None                                                ; 12.120 ns  ; FSMC_D[7] ; port_reg[7] ; CLK      ;
+; N/A                                     ; None                                                ; 12.094 ns  ; FSMC_D[3] ; port_reg[3] ; CLK      ;
+; N/A                                     ; None                                                ; 12.066 ns  ; FSMC_D[6] ; port_reg[6] ; CLK      ;
+; N/A                                     ; None                                                ; 11.630 ns  ; FSMC_A[2] ; data[18][0] ; CLK      ;
+; N/A                                     ; None                                                ; 11.458 ns  ; FSMC_A[4] ; data[18][0] ; CLK      ;
+; N/A                                     ; None                                                ; 11.353 ns  ; FSMC_A[3] ; data[18][0] ; CLK      ;
+; N/A                                     ; None                                                ; 11.302 ns  ; FSMC_A[3] ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 11.287 ns  ; FSMC_A[0] ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 11.247 ns  ; FSMC_A[2] ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 11.188 ns  ; FSMC_A[1] ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 11.166 ns  ; FSMC_A[3] ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 11.075 ns  ; FSMC_A[4] ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.924 ns  ; FSMC_A[2] ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 10.879 ns  ; FSMC_A[0] ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.874 ns  ; FSMC_D[2] ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 10.700 ns  ; FSMC_A[1] ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.660 ns  ; FSMC_A[2] ; data[18][5] ; CLK      ;
+; N/A                                     ; None                                                ; 10.652 ns  ; FSMC_A[2] ; data[18][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.639 ns  ; FSMC_D[1] ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.488 ns  ; FSMC_A[4] ; data[18][5] ; CLK      ;
+; N/A                                     ; None                                                ; 10.480 ns  ; FSMC_A[4] ; data[18][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.464 ns  ; FSMC_A[2] ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.460 ns  ; FSMC_A[4] ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 10.435 ns  ; FSMC_A[3] ; data[17][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.420 ns  ; FSMC_A[0] ; data[17][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.390 ns  ; FSMC_A[2] ; data[18][2] ; CLK      ;
+; N/A                                     ; None                                                ; 10.383 ns  ; FSMC_A[3] ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.383 ns  ; FSMC_A[3] ; data[18][5] ; CLK      ;
+; N/A                                     ; None                                                ; 10.381 ns  ; FSMC_A[2] ; data[18][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.375 ns  ; FSMC_A[3] ; data[18][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.342 ns  ; FSMC_A[2] ; data[18][1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.338 ns  ; FSMC_A[2] ; data[18][4] ; CLK      ;
+; N/A                                     ; None                                                ; 10.321 ns  ; FSMC_A[1] ; data[17][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.292 ns  ; FSMC_A[4] ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.292 ns  ; FSMC_A[3] ; data[17][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.277 ns  ; FSMC_A[0] ; data[17][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.261 ns  ; FSMC_A[3] ; data[16][0] ; CLK      ;
+; N/A                                     ; None                                                ; 10.222 ns  ; FSMC_A[2] ; data[16][0] ; CLK      ;
+; N/A                                     ; None                                                ; 10.218 ns  ; FSMC_A[4] ; data[18][2] ; CLK      ;
+; N/A                                     ; None                                                ; 10.209 ns  ; FSMC_A[4] ; data[18][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.192 ns  ; FSMC_A[0] ; data[16][2] ; CLK      ;
+; N/A                                     ; None                                                ; 10.180 ns  ; FSMC_A[0] ; data[16][1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.178 ns  ; FSMC_A[1] ; data[17][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.170 ns  ; FSMC_A[4] ; data[18][1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.166 ns  ; FSMC_A[4] ; data[18][4] ; CLK      ;
+; N/A                                     ; None                                                ; 10.153 ns  ; FSMC_A[0] ; data[16][6] ; CLK      ;
+; N/A                                     ; None                                                ; 10.113 ns  ; FSMC_A[3] ; data[18][2] ; CLK      ;
+; N/A                                     ; None                                                ; 10.112 ns  ; FSMC_A[0] ; data[16][4] ; CLK      ;
+; N/A                                     ; None                                                ; 10.104 ns  ; FSMC_A[3] ; data[18][7] ; CLK      ;
+; N/A                                     ; None                                                ; 10.096 ns  ; FSMC_A[0] ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.083 ns  ; FSMC_NWE  ; data[7][1]  ; CLK      ;
+; N/A                                     ; None                                                ; 10.065 ns  ; FSMC_A[3] ; data[18][1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.061 ns  ; FSMC_A[3] ; data[18][4] ; CLK      ;
+; N/A                                     ; None                                                ; 10.061 ns  ; FSMC_A[0] ; data[18][0] ; CLK      ;
+; N/A                                     ; None                                                ; 10.057 ns  ; FSMC_A[2] ; data[17][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.033 ns  ; FSMC_A[3] ; data[16][1] ; CLK      ;
+; N/A                                     ; None                                                ; 10.028 ns  ; FSMC_A[0] ; data[16][3] ; CLK      ;
+; N/A                                     ; None                                                ; 10.013 ns  ; FSMC_A[2] ; data[15][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.998 ns   ; FSMC_A[3] ; data[16][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.994 ns   ; FSMC_A[2] ; data[16][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.987 ns   ; FSMC_A[2] ; data[15][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.974 ns   ; FSMC_A[0] ; data[16][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.964 ns   ; M1_DIAG   ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 9.959 ns   ; FSMC_A[3] ; data[16][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.936 ns   ; FSMC_A[2] ; data[3][2]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.927 ns   ; FSMC_A[2] ; data[15][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.918 ns   ; FSMC_A[3] ; data[16][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.917 ns   ; FSMC_A[1] ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.914 ns   ; FSMC_A[2] ; data[17][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.875 ns   ; FSMC_A[1] ; data[16][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.863 ns   ; FSMC_A[1] ; data[16][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.855 ns   ; FSMC_A[3] ; data[3][2]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.848 ns   ; FSMC_A[3] ; data[17][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.841 ns   ; FSMC_A[4] ; data[15][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.836 ns   ; FSMC_A[1] ; data[16][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.834 ns   ; FSMC_A[3] ; data[16][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.833 ns   ; FSMC_A[0] ; data[17][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.816 ns   ; M1_H2     ; port_reg[1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.815 ns   ; FSMC_A[4] ; data[15][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.795 ns   ; FSMC_A[1] ; data[16][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.779 ns   ; FSMC_A[3] ; data[17][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.775 ns   ; FSMC_A[2] ; data[18][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.764 ns   ; FSMC_A[4] ; data[3][2]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.758 ns   ; FSMC_A[4] ; data[16][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.755 ns   ; FSMC_A[4] ; data[15][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.740 ns   ; FSMC_A[2] ; data[17][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.736 ns   ; FSMC_A[3] ; data[15][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.734 ns   ; FSMC_A[1] ; data[17][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.733 ns   ; FSMC_A[1] ; data[3][2]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.721 ns   ; FSMC_A[0] ; data[3][2]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.719 ns   ; FSMC_A[1] ; data[18][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.718 ns   ; FSMC_A[3] ; data[17][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.711 ns   ; FSMC_A[1] ; data[16][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.710 ns   ; FSMC_A[3] ; data[15][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.703 ns   ; FSMC_A[0] ; data[17][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.650 ns   ; FSMC_A[3] ; data[15][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.632 ns   ; FSMC_A[1] ; data[16][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.604 ns   ; FSMC_A[1] ; data[17][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.603 ns   ; FSMC_A[4] ; data[18][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.593 ns   ; FSMC_A[4] ; data[17][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.569 ns   ; FSMC_A[2] ; data[4][0]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.569 ns   ; FSMC_A[3] ; data[16][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.530 ns   ; FSMC_A[4] ; data[16][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.530 ns   ; FSMC_A[2] ; data[16][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.511 ns   ; FSMC_A[2] ; data[16][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.498 ns   ; FSMC_A[3] ; data[18][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.492 ns   ; FSMC_A[0] ; data[17][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.488 ns   ; FSMC_A[3] ; data[4][0]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.472 ns   ; FSMC_A[2] ; data[16][6] ; CLK      ;
+; N/A                                     ; None                                                ; 9.470 ns   ; FSMC_A[2] ; data[17][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.468 ns   ; FSMC_NWE  ; data[17][5] ; CLK      ;
+; N/A                                     ; None                                                ; 9.466 ns   ; FSMC_A[1] ; data[15][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.450 ns   ; FSMC_A[4] ; data[17][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.440 ns   ; FSMC_A[1] ; data[15][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.431 ns   ; FSMC_A[2] ; data[16][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.415 ns   ; M2_DIAG   ; port_reg[5] ; CLK      ;
+; N/A                                     ; None                                                ; 9.397 ns   ; FSMC_A[4] ; data[4][0]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.380 ns   ; FSMC_A[1] ; data[15][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.370 ns   ; FSMC_A[2] ; data[13][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.347 ns   ; FSMC_A[2] ; data[16][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.340 ns   ; FSMC_A[2] ; data[17][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.337 ns   ; FSMC_A[0] ; data[16][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.332 ns   ; FSMC_A[2] ; data[7][7]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.300 ns   ; FSMC_NWE  ; data[7][3]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.289 ns   ; FSMC_A[3] ; data[13][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.276 ns   ; FSMC_A[4] ; data[17][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.267 ns   ; FSMC_A[0] ; data[15][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.241 ns   ; FSMC_A[0] ; data[15][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.201 ns   ; FSMC_A[0] ; data[4][0]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.198 ns   ; FSMC_A[4] ; data[13][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.181 ns   ; FSMC_A[0] ; data[15][1] ; CLK      ;
+; N/A                                     ; None                                                ; 9.150 ns   ; FSMC_A[1] ; data[17][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.091 ns   ; FSMC_A[0] ; data[18][5] ; CLK      ;
+; N/A                                     ; None                                                ; 9.083 ns   ; FSMC_A[0] ; data[18][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.066 ns   ; FSMC_A[4] ; data[16][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.047 ns   ; FSMC_A[3] ; data[15][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.043 ns   ; FSMC_A[3] ; data[15][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.041 ns   ; M2_H3     ; port_reg[2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.041 ns   ; FSMC_A[3] ; data[17][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.035 ns   ; FSMC_A[0] ; data[18][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.022 ns   ; FSMC_A[1] ; data[4][0]  ; CLK      ;
+; N/A                                     ; None                                                ; 9.020 ns   ; FSMC_A[1] ; data[16][7] ; CLK      ;
+; N/A                                     ; None                                                ; 9.008 ns   ; FSMC_A[2] ; data[15][3] ; CLK      ;
+; N/A                                     ; None                                                ; 9.006 ns   ; FSMC_A[4] ; data[17][4] ; CLK      ;
+; N/A                                     ; None                                                ; 9.004 ns   ; FSMC_A[2] ; data[15][0] ; CLK      ;
+; N/A                                     ; None                                                ; 9.002 ns   ; FSMC_A[2] ; data[17][2] ; CLK      ;
+; N/A                                     ; None                                                ; 9.002 ns   ; FSMC_A[0] ; data[13][3] ; CLK      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;           ;             ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+-------------+----------+
+
+
++---------------------------------------------------------------------------------------------------+
+; tco                                                                                               ;
++-------+--------------+------------+--------------------------------------+-----------+------------+
+; Slack ; Required tco ; Actual tco ; From                                 ; To        ; From Clock ;
++-------+--------------+------------+--------------------------------------+-----------+------------+
+; N/A   ; None         ; 11.026 ns  ; data[0][4]                           ; led1      ; CLK        ;
+; N/A   ; None         ; 10.352 ns  ; data[0][7]                           ; M2_PWR    ; CLK        ;
+; N/A   ; None         ; 9.762 ns   ; port_reg[3]                          ; FSMC_D[3] ; CLK        ;
+; N/A   ; None         ; 9.761 ns   ; data[0][4]                           ; M2_FWDREV ; CLK        ;
+; N/A   ; None         ; 9.661 ns   ; data[0][2]                           ; M1_BR     ; CLK        ;
+; N/A   ; None         ; 9.560 ns   ; MOTOR_CONTROL:M1C|PWM:motor_vref|PWM ; M1_PWM    ; CLK        ;
+; N/A   ; None         ; 9.320 ns   ; port_reg[2]~en                       ; FSMC_D[2] ; CLK        ;
+; N/A   ; None         ; 9.254 ns   ; port_reg[7]                          ; FSMC_D[7] ; CLK        ;
+; N/A   ; None         ; 9.209 ns   ; MOTOR_CONTROL:M2C|PWM:motor_vref|PWM ; M2_PWM    ; CLK        ;
+; N/A   ; None         ; 9.154 ns   ; port_reg[3]~en                       ; FSMC_D[3] ; CLK        ;
+; N/A   ; None         ; 9.150 ns   ; data[0][5]                           ; M2_EN     ; CLK        ;
+; N/A   ; None         ; 9.111 ns   ; port_reg[1]                          ; FSMC_D[1] ; CLK        ;
+; N/A   ; None         ; 9.080 ns   ; data[0][3]                           ; M1_PWR    ; CLK        ;
+; N/A   ; None         ; 8.991 ns   ; MOTOR_FEEDBACK:M2F|dir_fwd_rev       ; led3      ; CLK        ;
+; N/A   ; None         ; 8.988 ns   ; MOTOR_FEEDBACK:M1F|Mx_H_reg          ; M1_SPEED  ; CLK        ;
+; N/A   ; None         ; 8.820 ns   ; MOTOR_FEEDBACK:M2F|Mx_H_reg          ; M2_SPEED  ; CLK        ;
+; N/A   ; None         ; 8.713 ns   ; port_reg[6]                          ; FSMC_D[6] ; CLK        ;
+; N/A   ; None         ; 8.684 ns   ; port_reg[4]                          ; FSMC_D[4] ; CLK        ;
+; N/A   ; None         ; 8.632 ns   ; port_reg[2]                          ; FSMC_D[2] ; CLK        ;
+; N/A   ; None         ; 8.550 ns   ; port_reg[5]                          ; FSMC_D[5] ; CLK        ;
+; N/A   ; None         ; 8.466 ns   ; data[0][1]                           ; M1_EN     ; CLK        ;
+; N/A   ; None         ; 8.448 ns   ; port_reg[0]                          ; FSMC_D[0] ; CLK        ;
+; N/A   ; None         ; 8.312 ns   ; data[0][6]                           ; M2_BR     ; CLK        ;
+; N/A   ; None         ; 8.305 ns   ; data[0][0]                           ; M1_FWDREV ; CLK        ;
+; N/A   ; None         ; 7.753 ns   ; port_reg[5]~en                       ; FSMC_D[5] ; CLK        ;
+; N/A   ; None         ; 7.751 ns   ; port_reg[4]~en                       ; FSMC_D[4] ; CLK        ;
+; N/A   ; None         ; 7.322 ns   ; port_reg[7]~en                       ; FSMC_D[7] ; CLK        ;
+; N/A   ; None         ; 7.301 ns   ; port_reg[6]~en                       ; FSMC_D[6] ; CLK        ;
+; N/A   ; None         ; 7.197 ns   ; port_reg[1]~en                       ; FSMC_D[1] ; CLK        ;
+; N/A   ; None         ; 7.185 ns   ; port_reg[0]~en                       ; FSMC_D[0] ; CLK        ;
++-------+--------------+------------+--------------------------------------+-----------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From      ; To                             ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------------------+----------+
+; N/A                                     ; None                                                ; -1.185 ns ; FSMC_D[0] ; data[18][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.197 ns ; FSMC_D[5] ; data[13][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.240 ns ; FSMC_D[6] ; data[5][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.245 ns ; FSMC_D[6] ; data[9][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.245 ns ; FSMC_D[7] ; data[14][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.261 ns ; FSMC_D[7] ; data[12][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.297 ns ; FSMC_D[5] ; data[18][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.297 ns ; FSMC_D[4] ; data[8][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.319 ns ; M1_H2     ; MOTOR_FEEDBACK:M1F|Mx_H2_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -1.345 ns ; FSMC_D[6] ; data[4][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.347 ns ; FSMC_D[2] ; data[10][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.351 ns ; FSMC_D[2] ; data[13][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.354 ns ; FSMC_D[2] ; data[18][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.356 ns ; FSMC_D[0] ; data[13][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.388 ns ; FSMC_D[5] ; data[1][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.393 ns ; FSMC_D[5] ; data[9][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.394 ns ; FSMC_D[2] ; data[2][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.395 ns ; FSMC_D[2] ; data[6][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.454 ns ; FSMC_D[1] ; data[4][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.469 ns ; FSMC_D[1] ; data[18][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.471 ns ; M1_LI     ; MOTOR_FEEDBACK:M1F|LI_SYNC1    ; CLK      ;
+; N/A                                     ; None                                                ; -1.518 ns ; FSMC_D[0] ; data[8][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.616 ns ; FSMC_D[3] ; data[3][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.647 ns ; FSMC_D[5] ; data[12][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.682 ns ; M2_LI     ; MOTOR_FEEDBACK:M2F|LI_SYNC1    ; CLK      ;
+; N/A                                     ; None                                                ; -1.739 ns ; FSMC_D[1] ; data[5][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.744 ns ; FSMC_D[1] ; data[1][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.748 ns ; FSMC_D[1] ; data[9][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.759 ns ; FSMC_D[6] ; data[16][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.818 ns ; FSMC_D[6] ; data[0][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.823 ns ; FSMC_D[1] ; data[2][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.846 ns ; FSMC_D[0] ; data[5][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.853 ns ; FSMC_D[0] ; data[9][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.935 ns ; FSMC_D[4] ; data[7][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.941 ns ; FSMC_D[4] ; data[5][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.946 ns ; FSMC_D[4] ; data[9][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.947 ns ; FSMC_NOE  ; port_reg[3]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.948 ns ; FSMC_D[4] ; data[1][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.950 ns ; FSMC_NOE  ; port_reg[2]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.950 ns ; FSMC_D[4] ; data[15][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.952 ns ; FSMC_NOE  ; port_reg[4]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.956 ns ; FSMC_NOE  ; port_reg[0]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.956 ns ; FSMC_NOE  ; port_reg[6]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.957 ns ; FSMC_NOE  ; port_reg[5]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.959 ns ; FSMC_NOE  ; port_reg[1]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.960 ns ; FSMC_NOE  ; port_reg[7]~en                 ; CLK      ;
+; N/A                                     ; None                                                ; -1.964 ns ; FSMC_D[5] ; data[8][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.968 ns ; FSMC_D[5] ; data[4][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.977 ns ; FSMC_D[7] ; data[18][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -1.993 ns ; FSMC_D[5] ; data[0][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.995 ns ; FSMC_A[3] ; data[3][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -1.996 ns ; FSMC_D[7] ; data[13][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.005 ns ; M2_H3     ; MOTOR_FEEDBACK:M2F|Mx_H3_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -2.087 ns ; M1_TACHO  ; data[16][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.091 ns ; FSMC_D[0] ; data[0][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.094 ns ; FSMC_A[2] ; data[3][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.115 ns ; FSMC_D[0] ; data[12][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.117 ns ; FSMC_D[5] ; data[14][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.121 ns ; M1_IS     ; data[16][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.127 ns ; FSMC_D[1] ; data[3][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.138 ns ; FSMC_D[0] ; data[11][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.143 ns ; M1_H3     ; MOTOR_FEEDBACK:M1F|Mx_H3_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -2.178 ns ; FSMC_D[7] ; data[15][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.180 ns ; FSMC_D[7] ; data[11][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.192 ns ; FSMC_D[3] ; data[8][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.205 ns ; FSMC_D[4] ; data[16][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.213 ns ; M2_TACHO  ; data[17][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.229 ns ; FSMC_A[0] ; data[3][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.241 ns ; FSMC_D[5] ; data[5][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.241 ns ; FSMC_A[1] ; data[3][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.260 ns ; M2_H2     ; MOTOR_FEEDBACK:M2F|Mx_H2_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -2.288 ns ; FSMC_D[4] ; data[6][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.368 ns ; FSMC_D[4] ; data[12][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.473 ns ; M1_H1     ; MOTOR_FEEDBACK:M1F|Mx_H1_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -2.520 ns ; M2_H2     ; data[17][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.521 ns ; FSMC_D[5] ; data[6][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.521 ns ; FSMC_D[4] ; data[18][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.527 ns ; FSMC_D[7] ; data[2][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.529 ns ; FSMC_D[5] ; data[10][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.530 ns ; FSMC_D[5] ; data[3][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.546 ns ; FSMC_D[7] ; data[16][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.564 ns ; FSMC_D[6] ; data[1][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.570 ns ; FSMC_D[6] ; data[8][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.575 ns ; FSMC_D[1] ; data[8][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.589 ns ; FSMC_D[0] ; data[14][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.594 ns ; FSMC_A[4] ; data[15][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.620 ns ; FSMC_D[7] ; data[3][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.661 ns ; FSMC_D[7] ; data[10][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.664 ns ; FSMC_D[7] ; data[6][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.676 ns ; M2_H1     ; MOTOR_FEEDBACK:M2F|Mx_H1_SYNC1 ; CLK      ;
+; N/A                                     ; None                                                ; -2.678 ns ; FSMC_D[0] ; data[1][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.698 ns ; FSMC_D[0] ; data[10][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.703 ns ; FSMC_A[0] ; data[2][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.704 ns ; FSMC_A[0] ; data[2][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.706 ns ; FSMC_A[0] ; data[2][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.716 ns ; FSMC_D[0] ; data[7][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.722 ns ; FSMC_D[1] ; data[6][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.723 ns ; FSMC_D[1] ; data[10][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.723 ns ; FSMC_D[1] ; data[15][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.725 ns ; FSMC_D[1] ; data[14][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.726 ns ; FSMC_D[1] ; data[0][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.726 ns ; FSMC_D[1] ; data[12][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.728 ns ; FSMC_D[1] ; data[11][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.729 ns ; FSMC_D[1] ; data[13][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.760 ns ; FSMC_D[7] ; data[0][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.761 ns ; FSMC_D[7] ; data[4][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.762 ns ; FSMC_D[7] ; data[8][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.797 ns ; FSMC_D[1] ; data[17][1]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.852 ns ; FSMC_A[1] ; data[10][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.859 ns ; FSMC_A[1] ; data[10][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.861 ns ; FSMC_A[1] ; data[10][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.876 ns ; FSMC_D[6] ; data[11][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.876 ns ; FSMC_A[1] ; data[2][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.877 ns ; FSMC_A[1] ; data[2][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.879 ns ; FSMC_A[1] ; data[2][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.879 ns ; FSMC_A[3] ; data[10][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.884 ns ; FSMC_D[6] ; data[7][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.886 ns ; FSMC_A[3] ; data[10][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.888 ns ; FSMC_A[3] ; data[10][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.910 ns ; FSMC_D[3] ; data[0][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.910 ns ; FSMC_D[4] ; data[3][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.916 ns ; FSMC_D[3] ; data[15][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.920 ns ; FSMC_D[3] ; data[11][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.935 ns ; FSMC_D[6] ; data[3][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.935 ns ; FSMC_A[2] ; data[2][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.936 ns ; FSMC_A[2] ; data[2][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.938 ns ; FSMC_A[2] ; data[2][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.955 ns ; FSMC_D[7] ; data[1][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.984 ns ; FSMC_D[2] ; data[7][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.987 ns ; M2_IS     ; data[17][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.989 ns ; FSMC_A[0] ; data[13][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.996 ns ; FSMC_A[0] ; data[13][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -2.998 ns ; FSMC_D[7] ; data[5][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -2.999 ns ; FSMC_A[0] ; data[13][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.005 ns ; FSMC_D[7] ; data[9][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.029 ns ; FSMC_D[4] ; data[14][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.049 ns ; M1_DIAG   ; data[16][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.049 ns ; FSMC_D[2] ; data[4][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.153 ns ; FSMC_A[3] ; data[4][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.178 ns ; FSMC_A[0] ; data[10][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.183 ns ; FSMC_D[0] ; data[2][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.184 ns ; FSMC_D[2] ; data[11][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.185 ns ; FSMC_A[0] ; data[10][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.187 ns ; FSMC_A[0] ; data[10][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.211 ns ; FSMC_D[4] ; data[2][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.220 ns ; FSMC_D[0] ; data[6][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.220 ns ; FSMC_D[4] ; data[17][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.228 ns ; FSMC_D[0] ; data[4][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.256 ns ; FSMC_D[6] ; data[2][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.258 ns ; FSMC_D[2] ; data[8][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.260 ns ; FSMC_D[2] ; data[0][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.261 ns ; FSMC_D[6] ; data[10][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.264 ns ; FSMC_D[6] ; data[6][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.265 ns ; FSMC_A[3] ; data[2][6]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.266 ns ; FSMC_A[3] ; data[2][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.268 ns ; FSMC_A[3] ; data[2][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.278 ns ; FSMC_D[6] ; data[17][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.298 ns ; FSMC_D[6] ; data[18][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.301 ns ; FSMC_D[4] ; data[4][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.306 ns ; FSMC_D[4] ; data[0][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.331 ns ; FSMC_D[0] ; data[15][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.336 ns ; FSMC_D[3] ; data[14][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.338 ns ; FSMC_D[4] ; data[10][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.346 ns ; FSMC_D[3] ; data[4][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.349 ns ; FSMC_D[6] ; data[14][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.349 ns ; FSMC_A[3] ; data[3][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.351 ns ; FSMC_A[0] ; data[4][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.352 ns ; FSMC_A[2] ; data[10][0]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.354 ns ; FSMC_D[6] ; data[12][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.356 ns ; FSMC_D[6] ; data[13][6]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.359 ns ; FSMC_A[2] ; data[10][4]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.361 ns ; FSMC_A[2] ; data[10][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.420 ns ; FSMC_A[2] ; data[0][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.448 ns ; FSMC_A[2] ; data[3][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.457 ns ; FSMC_D[3] ; data[13][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.463 ns ; M1_H3     ; data[16][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.466 ns ; FSMC_D[3] ; data[1][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.467 ns ; FSMC_D[3] ; data[5][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.470 ns ; FSMC_D[5] ; data[15][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.470 ns ; FSMC_D[3] ; data[10][3]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.485 ns ; FSMC_D[5] ; data[2][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.486 ns ; FSMC_D[5] ; data[11][5]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.521 ns ; FSMC_A[3] ; data[6][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.523 ns ; FSMC_A[3] ; data[6][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.528 ns ; FSMC_A[3] ; data[6][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.531 ns ; FSMC_A[3] ; data[6][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.557 ns ; M2_H3     ; data[17][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.564 ns ; FSMC_A[1] ; data[6][5]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.566 ns ; FSMC_A[1] ; data[6][7]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.571 ns ; FSMC_D[7] ; data[17][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.571 ns ; FSMC_A[1] ; data[6][0]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.571 ns ; FSMC_A[0] ; data[2][2]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.574 ns ; FSMC_A[1] ; data[6][1]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.583 ns ; FSMC_A[0] ; data[3][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.588 ns ; FSMC_D[2] ; data[14][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.589 ns ; FSMC_D[2] ; data[12][2]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.595 ns ; FSMC_A[1] ; data[3][3]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.613 ns ; FSMC_A[2] ; data[4][4]                     ; CLK      ;
+; N/A                                     ; None                                                ; -3.677 ns ; FSMC_A[4] ; data[15][7]                    ; CLK      ;
+; N/A                                     ; None                                                ; -3.691 ns ; FSMC_A[3] ; data[13][7]                    ; CLK      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;           ;                                ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Mon Dec 23 16:33:35 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Electric_bend -c Electric_bend
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK" is an undefined clock
+Info: Clock "CLK" has Internal fmax of 41.9 MHz between source register "data[3][5]" and destination register "MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp" (period= 23.866 ns)
+    Info: + Longest register to register delay is 11.224 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y6_N5; Fanout = 7; REG Node = 'data[3][5]'
+        Info: 2: + IC(3.134 ns) + CELL(0.200 ns) = 3.334 ns; Loc. = LC_X11_Y5_N5; Fanout = 1; COMB Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|Equal1~2'
+        Info: 3: + IC(2.035 ns) + CELL(0.200 ns) = 5.569 ns; Loc. = LC_X11_Y7_N5; Fanout = 1; COMB Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|Equal1~4'
+        Info: 4: + IC(1.897 ns) + CELL(0.200 ns) = 7.666 ns; Loc. = LC_X14_Y6_N9; Fanout = 2; COMB Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|Equal1~10'
+        Info: 5: + IC(2.462 ns) + CELL(0.200 ns) = 10.328 ns; Loc. = LC_X10_Y7_N8; Fanout = 1; COMB Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp~0'
+        Info: 6: + IC(0.305 ns) + CELL(0.591 ns) = 11.224 ns; Loc. = LC_X10_Y7_N9; Fanout = 2; REG Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp'
+        Info: Total cell delay = 1.391 ns ( 12.39 % )
+        Info: Total interconnect delay = 9.833 ns ( 87.61 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "CLK" to destination register is 3.699 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_91; Fanout = 230; CLK Node = 'CLK'
+            Info: 2: + IC(1.618 ns) + CELL(0.918 ns) = 3.699 ns; Loc. = LC_X10_Y7_N9; Fanout = 2; REG Node = 'MOTOR_CONTROL:M1C|PWM:motor_vref|pwm_temp'
+            Info: Total cell delay = 2.081 ns ( 56.26 % )
+            Info: Total interconnect delay = 1.618 ns ( 43.74 % )
+        Info: - Longest clock path from clock "CLK" to source register is 3.699 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_91; Fanout = 230; CLK Node = 'CLK'
+            Info: 2: + IC(1.618 ns) + CELL(0.918 ns) = 3.699 ns; Loc. = LC_X4_Y6_N5; Fanout = 7; REG Node = 'data[3][5]'
+            Info: Total cell delay = 2.081 ns ( 56.26 % )
+            Info: Total interconnect delay = 1.618 ns ( 43.74 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "port_reg[5]" (data pin = "FSMC_A[2]", clock pin = "CLK") is 17.497 ns
+    Info: + Longest pin to register delay is 20.863 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_40; Fanout = 34; PIN Node = 'FSMC_A[2]'
+        Info: 2: + IC(3.512 ns) + CELL(0.740 ns) = 5.384 ns; Loc. = LC_X10_Y5_N1; Fanout = 4; COMB Node = 'Equal3~0'
+        Info: 3: + IC(0.305 ns) + CELL(0.200 ns) = 5.889 ns; Loc. = LC_X10_Y5_N2; Fanout = 3; COMB Node = 'always0~0'
+        Info: 4: + IC(0.719 ns) + CELL(0.200 ns) = 6.808 ns; Loc. = LC_X10_Y5_N0; Fanout = 229; COMB Node = 'data~0'
+        Info: 5: + IC(3.523 ns) + CELL(0.200 ns) = 10.531 ns; Loc. = LC_X4_Y6_N1; Fanout = 1; COMB Node = 'data~130'
+        Info: 6: + IC(5.457 ns) + CELL(0.740 ns) = 16.728 ns; Loc. = LC_X13_Y6_N8; Fanout = 1; COMB Node = 'Mux2~1'
+        Info: 7: + IC(0.729 ns) + CELL(0.200 ns) = 17.657 ns; Loc. = LC_X13_Y6_N5; Fanout = 1; COMB Node = 'Mux2~4'
+        Info: 8: + IC(1.881 ns) + CELL(0.200 ns) = 19.738 ns; Loc. = LC_X12_Y3_N4; Fanout = 1; COMB Node = 'Mux2~5'
+        Info: 9: + IC(0.534 ns) + CELL(0.591 ns) = 20.863 ns; Loc. = LC_X12_Y3_N5; Fanout = 1; REG Node = 'port_reg[5]'
+        Info: Total cell delay = 4.203 ns ( 20.15 % )
+        Info: Total interconnect delay = 16.660 ns ( 79.85 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 3.699 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_91; Fanout = 230; CLK Node = 'CLK'
+        Info: 2: + IC(1.618 ns) + CELL(0.918 ns) = 3.699 ns; Loc. = LC_X12_Y3_N5; Fanout = 1; REG Node = 'port_reg[5]'
+        Info: Total cell delay = 2.081 ns ( 56.26 % )
+        Info: Total interconnect delay = 1.618 ns ( 43.74 % )
+Info: tco from clock "CLK" to destination pin "led1" through register "data[0][4]" is 11.026 ns
+    Info: + Longest clock path from clock "CLK" to source register is 3.699 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_91; Fanout = 230; CLK Node = 'CLK'
+        Info: 2: + IC(1.618 ns) + CELL(0.918 ns) = 3.699 ns; Loc. = LC_X12_Y4_N2; Fanout = 4; REG Node = 'data[0][4]'
+        Info: Total cell delay = 2.081 ns ( 56.26 % )
+        Info: Total interconnect delay = 1.618 ns ( 43.74 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 6.951 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y4_N2; Fanout = 4; REG Node = 'data[0][4]'
+        Info: 2: + IC(4.629 ns) + CELL(2.322 ns) = 6.951 ns; Loc. = PIN_144; Fanout = 0; PIN Node = 'led1'
+        Info: Total cell delay = 2.322 ns ( 33.41 % )
+        Info: Total interconnect delay = 4.629 ns ( 66.59 % )
+Info: th for register "data[18][0]" (data pin = "FSMC_D[0]", clock pin = "CLK") is -1.185 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 3.699 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_91; Fanout = 230; CLK Node = 'CLK'
+        Info: 2: + IC(1.618 ns) + CELL(0.918 ns) = 3.699 ns; Loc. = LC_X14_Y2_N7; Fanout = 2; REG Node = 'data[18][0]'
+        Info: Total cell delay = 2.081 ns ( 56.26 % )
+        Info: Total interconnect delay = 1.618 ns ( 43.74 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.105 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_70; Fanout = 1; PIN Node = 'FSMC_D[0]'
+        Info: 2: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = IOC_X15_Y0_N2; Fanout = 34; COMB Node = 'FSMC_D[0]~0'
+        Info: 3: + IC(2.790 ns) + CELL(1.183 ns) = 5.105 ns; Loc. = LC_X14_Y2_N7; Fanout = 2; REG Node = 'data[18][0]'
+        Info: Total cell delay = 2.315 ns ( 45.35 % )
+        Info: Total interconnect delay = 2.790 ns ( 54.65 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 214 megabytes
+    Info: Processing ended: Mon Dec 23 16:33:36 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

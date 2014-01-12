@@ -1,0 +1,390 @@
+Analysis & Synthesis report for Electric_bend
+Mon Dec 23 16:33:28 2013
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "MOTOR_CONTROL:M2C"
+ 12. Port Connectivity Checks: "MOTOR_CONTROL:M1C"
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Dec 23 16:33:28 2013    ;
+; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name               ; Electric_bend                            ;
+; Top-level Entity Name       ; Electric_bend                            ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 669                                      ;
+; Total pins                  ; 59                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                                      ; Electric_bend      ; Electric_bend      ;
+; Family name                                                                ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+
+; ../src/MOTOR_CONTROL.v           ; yes             ; User Verilog HDL File  ; G:/WD/Verilog/Electric_bend/src/MOTOR_CONTROL.v  ;
+; ../src/Electric_bend.v           ; yes             ; User Verilog HDL File  ; G:/WD/Verilog/Electric_bend/src/Electric_bend.v  ;
+; ../src/PWM.v                     ; yes             ; User Verilog HDL File  ; G:/WD/Verilog/Electric_bend/src/PWM.v            ;
+; ../src/MOTOR_FEEDBACK.v          ; yes             ; User Verilog HDL File  ; G:/WD/Verilog/Electric_bend/src/MOTOR_FEEDBACK.v ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 669   ;
+;     -- Combinational with no register       ; 439   ;
+;     -- Register only                        ; 199   ;
+;     -- Combinational with a register        ; 31    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 311   ;
+;     -- 3 input functions                    ; 109   ;
+;     -- 2 input functions                    ; 41    ;
+;     -- 1 input functions                    ; 9     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 578   ;
+;     -- arithmetic mode                      ; 91    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 230   ;
+; Total logic cells in carry chains           ; 96    ;
+; I/O pins                                    ; 59    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 230   ;
+; Total fan-out                               ; 2121  ;
+; Average fan-out                             ; 2.91  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                             ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+--------------+
+; |Electric_bend             ; 669 (457)   ; 230          ; 0          ; 59   ; 0            ; 439 (289)    ; 199 (152)         ; 31 (16)          ; 96 (0)          ; 0 (0)      ; |Electric_bend                                  ; work         ;
+;    |MOTOR_CONTROL:M1C|     ; 89 (0)      ; 2            ; 0          ; 0    ; 0            ; 87 (0)       ; 0 (0)             ; 2 (0)            ; 64 (0)          ; 0 (0)      ; |Electric_bend|MOTOR_CONTROL:M1C                ; work         ;
+;       |PWM:motor_vref|     ; 89 (89)     ; 2            ; 0          ; 0    ; 0            ; 87 (87)      ; 0 (0)             ; 2 (2)            ; 64 (64)         ; 0 (0)      ; |Electric_bend|MOTOR_CONTROL:M1C|PWM:motor_vref ; work         ;
+;    |MOTOR_CONTROL:M2C|     ; 79 (0)      ; 34           ; 0          ; 0    ; 0            ; 45 (0)       ; 25 (0)            ; 9 (0)            ; 32 (0)          ; 0 (0)      ; |Electric_bend|MOTOR_CONTROL:M2C                ; work         ;
+;       |PWM:motor_vref|     ; 79 (79)     ; 34           ; 0          ; 0    ; 0            ; 45 (45)      ; 25 (25)           ; 9 (9)            ; 32 (32)         ; 0 (0)      ; |Electric_bend|MOTOR_CONTROL:M2C|PWM:motor_vref ; work         ;
+;    |MOTOR_FEEDBACK:M1F|    ; 22 (22)     ; 13           ; 0          ; 0    ; 0            ; 9 (9)        ; 11 (11)           ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |Electric_bend|MOTOR_FEEDBACK:M1F               ; work         ;
+;    |MOTOR_FEEDBACK:M2F|    ; 22 (22)     ; 13           ; 0          ; 0    ; 0            ; 9 (9)        ; 11 (11)           ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |Electric_bend|MOTOR_FEEDBACK:M2F               ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-----------------------------------------+-----------------------------------------------------+
+; Register name                           ; Reason for Removal                                  ;
++-----------------------------------------+-----------------------------------------------------+
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[14] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[14] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[13] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[13] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[12] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[12] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[11] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[11] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[10] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[10] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[9]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[9]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[8]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[8]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[7]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[7]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[6]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[6]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[5]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[5]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[4]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[4]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[3]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[3]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[2]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[2]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[1]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[1]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[0]  ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[0]  ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[15] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[15] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[16] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[16] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[17] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[17] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[18] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[18] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[19] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[19] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[20] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[20] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[21] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[21] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[22] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[22] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[23] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[23] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[24] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[24] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[25] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[25] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[26] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[26] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[27] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[27] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[28] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[28] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[29] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[29] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[30] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[30] ;
+; MOTOR_CONTROL:M1C|PWM:motor_vref|cn[31] ; Merged with MOTOR_CONTROL:M2C|PWM:motor_vref|cn[31] ;
+; Total Number of Removed Registers = 32  ;                                                     ;
++-----------------------------------------+-----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 230   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 19:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |Electric_bend|port_reg[0] ;
+; 1:1                ; 5 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |Electric_bend|addr        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Electric_bend|data        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Electric_bend|data        ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Electric_bend|data        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Electric_bend|data        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "MOTOR_CONTROL:M2C"         ;
++---------------------+-------+----------+--------------+
+; Port                ; Type  ; Severity ; Details      ;
++---------------------+-------+----------+--------------+
+; COUNT_VALUE[14..13] ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[8..7]   ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[12..9]  ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[2..0]   ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[15]     ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[6]      ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[5]      ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[4]      ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[3]      ; Input ; Info     ; Stuck at VCC ;
++---------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "MOTOR_CONTROL:M1C"         ;
++---------------------+-------+----------+--------------+
+; Port                ; Type  ; Severity ; Details      ;
++---------------------+-------+----------+--------------+
+; COUNT_VALUE[14..13] ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[8..7]   ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[12..9]  ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[2..0]   ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[15]     ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[6]      ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[5]      ; Input ; Info     ; Stuck at VCC ;
+; COUNT_VALUE[4]      ; Input ; Info     ; Stuck at GND ;
+; COUNT_VALUE[3]      ; Input ; Info     ; Stuck at VCC ;
++---------------------+-------+----------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Mon Dec 23 16:33:27 2013
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Electric_bend -c Electric_bend
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 1 design units, including 1 entities, in source file /wd/verilog/electric_bend/src/motor_control.v
+    Info: Found entity 1: MOTOR_CONTROL
+Info: Found 1 design units, including 1 entities, in source file /wd/verilog/electric_bend/src/electric_bend.v
+    Info: Found entity 1: Electric_bend
+Info: Found 1 design units, including 1 entities, in source file /wd/verilog/electric_bend/src/pwm.v
+    Info: Found entity 1: PWM
+Info: Found 1 design units, including 1 entities, in source file /wd/verilog/electric_bend/src/motor_feedback.v
+    Info: Found entity 1: MOTOR_FEEDBACK
+Info: Elaborating entity "Electric_bend" for the top level hierarchy
+Warning (10858): Verilog HDL warning at Electric_bend.v(76): object S_STAT used but never assigned
+Warning (10858): Verilog HDL warning at Electric_bend.v(76): object M3_STAT used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at Electric_bend.v(77): object "M3_C" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Electric_bend.v(78): object "M1_C_V" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Electric_bend.v(78): object "M2_C_V" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Electric_bend.v(78): object "M3_C_V" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Electric_bend.v(78): object "M3_D_V" assigned a value but never read
+Warning (10030): Net "S_STAT" at Electric_bend.v(76) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "M3_STAT" at Electric_bend.v(76) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "led2" at Electric_bend.v(69) has no driver
+Warning (10034): Output port "M3_PWR" at Electric_bend.v(58) has no driver
+Warning (10034): Output port "M3_PWM" at Electric_bend.v(59) has no driver
+Warning (10034): Output port "M3_FWDREV" at Electric_bend.v(60) has no driver
+Warning (10034): Output port "M3_EN" at Electric_bend.v(61) has no driver
+Warning (10034): Output port "M3_BR" at Electric_bend.v(62) has no driver
+Warning (10034): Output port "M3_SPEED" at Electric_bend.v(67) has no driver
+Info: Elaborating entity "MOTOR_CONTROL" for hierarchy "MOTOR_CONTROL:M1C"
+Info: Elaborating entity "PWM" for hierarchy "MOTOR_CONTROL:M1C|PWM:motor_vref"
+Info: Elaborating entity "MOTOR_FEEDBACK" for hierarchy "MOTOR_FEEDBACK:M1F"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led2" is stuck at GND
+    Warning (13410): Pin "M3_PWR" is stuck at GND
+    Warning (13410): Pin "M3_PWM" is stuck at GND
+    Warning (13410): Pin "M3_FWDREV" is stuck at GND
+    Warning (13410): Pin "M3_EN" is stuck at GND
+    Warning (13410): Pin "M3_BR" is stuck at GND
+    Warning (13410): Pin "M3_SPEED" is stuck at GND
+Warning: Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "M3_LI"
+    Warning (15610): No output dependent on input pin "M3_DIAG"
+    Warning (15610): No output dependent on input pin "M3_IS"
+    Warning (15610): No output dependent on input pin "M3_TACHO"
+    Warning (15610): No output dependent on input pin "M3_H1"
+    Warning (15610): No output dependent on input pin "M3_H2"
+    Warning (15610): No output dependent on input pin "M3_H3"
+    Warning (15610): No output dependent on input pin "FSMC_NE1"
+Info: Implemented 728 device resources after synthesis - the final resource count might be different
+    Info: Implemented 30 input pins
+    Info: Implemented 21 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 669 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 268 megabytes
+    Info: Processing ended: Mon Dec 23 16:33:29 2013
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

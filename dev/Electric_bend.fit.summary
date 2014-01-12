@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Dec 23 16:33:32 2013
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : Electric_bend
+Top-level Entity Name : Electric_bend
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 492 / 1,270 ( 39 % )
+Total pins : 59 / 116 ( 51 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
