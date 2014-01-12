@@ -1,0 +1,65 @@
+/********************************************************************************
+ MOTOR CONTROL MODULE
+ 2013
+ ZAY
+*********************************************************************************/
+
+module MOTOR CONTROL(
+CLK,
+PWM,
+FWDREV,
+EN,
+BR,
+H1,H2,H3,
+INSTR,STAT);
+
+input CLK;		//EX CLK 50Mhz
+input H1,H2,H3;	//hall sensor signals from motor 
+input[2:0] INSTR;	//instrcutions for motor
+
+output PWM;		//PWM signals for speed control
+output FWDREV;	//FWDREV signals for direction control
+output EN;		//EN signals for enable L6235
+output BR;		//BRAKE signals
+output[2:0] STAT;	//status of motor
+
+reg[2:0] INSTR;
+reg FWDREV;
+reg EN;
+reg BR;
+
+//instruction definiton
+//`define 'b00
+
+//instruction parse
+always @(posedge CLK or INSTR) 
+	begin
+		//control signals parse
+		case(INSTR)
+			3'bx0x:	EN <= 0;			//disable all power mosfet
+			3'bx1x:	EN <= 1;			//enable all power mosfet
+			3'b01x:	BR <= 0;			//disable all high-side power mosfet, brake function
+			3'b11x: BR <= 1;			//enable all high-side power mosfet	
+			3'b110:	FWDREV <= 1;		//move forward
+			3'b111:	FWDREV <= 0;		//move backward
+			default:	
+				begin
+					FWDREV <= 0;
+					EN <= 0;
+					BR <= 0;
+				end
+		endcase
+	end
+
+
+	
+//speed parse
+PWM motor_vref (.CLK(CLK), .COUNT_VALUE(COUNT_VALUR), .DUTY_VALUE(DUTY_VALUE), .PWM(PWM));
+
+//status feedback
+//hall sensor
+assign STAT[0] = H1;
+assign STAT[1] = H2;
+assign STAT[2] = H3;
+ 	
+endmodule

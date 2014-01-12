@@ -1,0 +1,48 @@
+/********************************************************************************
+ FSMC(Flexible static memory controller) MODULE
+ 2013
+ ZAY
+*********************************************************************************/
+
+module FSMC(
+CLK,
+FSMC_A,
+FSMC_NOE,
+FSMC_NWE,
+FSMC_NE,
+FSMC_D);
+
+input CLK;						//clock from CPLD
+input [7:0] FSMC_A;				//A0-A7 from STM32 FSMC
+input FSMC_NOE;					//output enable
+input FSMC_NWE;					//write enable
+input [3:0] FSMC_NE;			//chip enable NE1-4 from STM32 FSMC
+
+inout [15:0] FSMC_D;			//D0-DD7 to STM32 FSMC
+
+reg [15:0] data[1:0]; 			//array to store data
+reg [15:0] FSMC_D;
+
+wire start_mem;					//flag to indicate FSMC_NE
+wire [1:0] addr;			    //to store A from STM32
+
+
+//assign value to addr
+assign addr = FSMC_NE[0] ? FSMC_A[1:0] : 2'bzz;	
+
+//stm32 & CPLD memory transacton
+//stm32 read data from CPLD
+always @(negedge FSMC_NOE)	 
+	begin
+		FSMC_D <= data[addr];
+	end
+			
+//stm32 wite data to CPLD
+always @(negedge FSMC_NWE)	 
+	begin
+		data[addr] <= FSMC_D;
+	end								
+
+endmodule
+		
+		
