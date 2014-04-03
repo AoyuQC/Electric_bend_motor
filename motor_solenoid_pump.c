@@ -150,7 +150,8 @@ void INSTR_Parse()
         SPEED_Bit0 = (int)(get_data[7]-'0');
         dir_count--;
       }
-      
+      //debug
+      printf("INSTR is %d \n", INSTR);
       switch(INSTR)
       {
       case M1F:     // motor 1 run left(FWD)
@@ -243,6 +244,31 @@ void INSTR_Parse()
         M2_Brake_flag = 1;
         break;
       //debug purpose
+      //for motor3 hengqu direct set PWM
+      case M3F:     // motor 3 run right
+        INSTR = 100;
+        M_C.FWDREV = FWD;
+        M_C.ENABLE = ON;
+        M_C.BRAKE  = OFF;
+        //set PWM value
+        M_C.Duty_value = SPEED_Bit4*10000 + SPEED_Bit3*1000 + SPEED_Bit2*100 + SPEED_Bit1*10 +SPEED_Bit0;
+        MOTOR_Control(M3,&M_C,CONTROL|SPEED);
+        break;
+        //printf("MC \n");
+      case M3R:    // motor 3 run left
+        INSTR = 100;
+        M_C.FWDREV = REV;
+        M_C.ENABLE = ON;
+        M_C.BRAKE  = OFF;
+        //set PWM value
+        M_C.Duty_value = SPEED_Bit4*10000 + SPEED_Bit3*1000 + SPEED_Bit2*100 + SPEED_Bit1*10 +SPEED_Bit0;
+        MOTOR_Control(M3,&M_C,CONTROL|SPEED);
+        break;
+      case M3B:   // motor 3 brake
+        INSTR = 100;
+        M_C.BRAKE  = ON;
+        MOTOR_Control(M3,&M_C,CONTROL);
+        break;
       case P:
         P_Factor = PID_Value2*100 + PID_Value1*10 + PID_Value0;
         //printf("%f %f %f \n",P_Factor,I_Factor,D_Factor);

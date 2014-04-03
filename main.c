@@ -51,26 +51,30 @@ int main()
   //Turn ALL LED OFF
   GPIOF->BSRR |= 0x01400000;
 
-  M_C.BRAKE  = ON;
+  M_C.BRAKE  = OFF;
   M_C.ENABLE = OFF;
   M_C.FWDREV = FWD;
   M_C.POWER_Supply = ON;
   M_C.Count_value = 2500;
   M_C.Duty_value = 25000 - 2857; //5RPS
   
+  //debug for henqu
+  M_C.Duty_value = 2500 - 1250;
+  
   MOTOR_Control(M1,&M_C,CONTROL|SPEED);
   MOTOR_Control(M2,&M_C,CONTROL|SPEED);
+  MOTOR_Control(M3,&M_C,CONTROL|SPEED);
   
   //Reset endoscopy position
-  Reset_endoscopy_position();
+  //debug for henqu Reset_endoscopy_position();
   
   //Test check pole count per round
   //Check_pole_count();
   
   SCH_Init_Task();
   SCH_Add_Task(INSTR_Parse,0,1);
-  SCH_Add_Task(MOTOR_PID_Adjust,1,1);
-  SCH_Add_Task(SHOW_Dynamic,2,1000);
+  //debug for henqu SCH_Add_Task(MOTOR_PID_Adjust,1,1);
+  //SCH_Add_Task(SHOW_Dynamic,2,1000);
   //SCH_Add_Task(MOTOR_Speed,3,10);
   //printf("start test \n");
   
